@@ -50,7 +50,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form class="task-form">
                 <div class="form-group">
                   <label for="title-name" class="col-form-label modal-label"
                     >Title:</label
@@ -59,8 +59,8 @@
                     type="text"
                     class="form-control modal-title-input"
                     id="title-name"
-                    required
                   />
+                  <div class="error-msg title-error-msg"></div>
                 </div>
                 <div class="form-group">
                   <label for="task-date" class="modal-label">Due to</label>
@@ -70,8 +70,8 @@
                       type="date"
                       class="form-control modal-date-input"
                       placeholder="dd/mm/yyyy"
-                      required
                     />
+                    <div class="error-msg date-error-msg"></div>
                   </div>
                 </div>
 
@@ -84,31 +84,32 @@
                   <textarea
                     class="form-control modal-textarea"
                     id="task-description-text"
-                    required
                   ></textarea>
+                  <div class="error-msg text-error-msg"></div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary modal-btn"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    class="btn btn-primary modal-btn submit-task-btn"
+                    type="submit"
+                    data-dismiss="modal"
+                  >
+                    Submit task
+                  </button>
                 </div>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary modal-btn"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary modal-btn submit-task-btn"
-              >
-                Submit task
-              </button>
             </div>
           </div>
         </div>
       </div>
 
-      <section>
+      <section class="tasks-section">
         <h2 class="section-title">Tasks</h2>
 
         <!-- task template -->

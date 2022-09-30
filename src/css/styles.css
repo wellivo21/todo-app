@@ -100,6 +100,12 @@ main {
 .modal-textarea {
   font-size: 1.6rem;
 }
+.error-msg {
+  display: block;
+  width: 100%;
+  font-size: 1.4rem;
+  color: #d60202;
+}
 
 /* BUTTONS */
 .add-btn {
