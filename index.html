@@ -15,7 +15,8 @@
     />
     <!-- CSS links -->
     <link rel="stylesheet" href="./src/css/styles.css" />
-    <script src="./src/js/script.js"></script>
+
+    <script defer src="./src/js/script.js"></script>
   </head>
   <body class="container">
     <main>
@@ -56,10 +57,24 @@
                   >
                   <input
                     type="text"
-                    class="form-control modal-input"
+                    class="form-control modal-title-input"
                     id="title-name"
+                    required
                   />
                 </div>
+                <div class="form-group">
+                  <label for="task-date" class="modal-label">Due to</label>
+                  <!-- Datepicker as text field -->
+                  <div class="input-group date" data-date-format="dd/mm/yyyy">
+                    <input
+                      type="date"
+                      class="form-control modal-date-input"
+                      placeholder="dd/mm/yyyy"
+                      required
+                    />
+                  </div>
+                </div>
+
                 <div class="form-group">
                   <label
                     for="task-description-text"
@@ -69,6 +84,7 @@
                   <textarea
                     class="form-control modal-textarea"
                     id="task-description-text"
+                    required
                   ></textarea>
                 </div>
               </form>
@@ -81,7 +97,10 @@
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary modal-btn">
+              <button
+                type="button"
+                class="btn btn-primary modal-btn submit-task-btn"
+              >
                 Submit task
               </button>
             </div>
@@ -99,8 +118,8 @@
           <p class="task-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
-          <i class="icon write-btn fa-solid fa-pen-to-square"></i>
-          <i class="icon delete-btn fa-solid fa-trash-can"></i>
+          <i class="icon modify-task-btn fa-solid fa-pen-to-square"></i>
+          <i class="icon delete-task-btn fa-solid fa-trash-can"></i>
         </article>
       </section>
     </main>

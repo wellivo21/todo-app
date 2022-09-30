@@ -92,11 +92,12 @@ main {
 .modal-content {
   padding: 1rem;
 }
-.modal-label,
-.modal-textarea {
+.modal-label {
   font-size: 1.8rem;
 }
-.modal-input {
+.modal-title-input,
+.modal-date-input,
+.modal-textarea {
   font-size: 1.6rem;
 }
 
