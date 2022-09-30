@@ -21,9 +21,73 @@
     <main>
       <h1 class="app-title">TODO App</h1>
 
-      <button class="add-btn">
+      <!-- modal -->
+      <button class="add-btn" data-toggle="modal" data-target="#exampleModal">
         Add new task <i class="icon plus-sign fa-solid fa-plus"></i>
       </button>
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title section-title" id="exampleModalLabel">
+                Task details
+              </h3>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="title-name" class="col-form-label modal-label"
+                    >Title:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control modal-input"
+                    id="title-name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label
+                    for="task-description-text"
+                    class="col-form-label modal-label"
+                    >Description:</label
+                  >
+                  <textarea
+                    class="form-control modal-textarea"
+                    id="task-description-text"
+                  ></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary modal-btn"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary modal-btn">
+                Submit task
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section>
         <h2 class="section-title">Tasks</h2>
