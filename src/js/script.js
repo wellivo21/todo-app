@@ -1,3 +1,5 @@
+import { clearInputs, formatDate } from './helpers.js';
+
 // element selectors
 const modalTitleInputEl = document.querySelector('.modal-title-input');
 const modalDateInputEl = document.querySelector('.modal-date-input');
@@ -41,13 +43,14 @@ const formValidation = () => {
       date: '',
       text: '',
     };
-    data.title = titleData;
-    data.text = textareaData;
 
     // separating date to format in day/month/year
     const dateParts = dateData.split('-');
     const [year, month, day] = dateParts;
+
     data.date = `${day}-${month}-${year}`;
+    data.title = titleData;
+    data.text = textareaData;
 
     return data;
   }
@@ -77,9 +80,7 @@ const createTask = () => {
   $('.modal').modal('hide');
 
   // reseting inputs
-  modalTitleInputEl.value = '';
-  modalDateInputEl.value = '';
-  modalTextareaEl.value = '';
+  clearInputs(modalTitleInputEl, modalDateInputEl, modalTextareaEl);
 };
 
 const modifyTask = () => {
@@ -94,16 +95,11 @@ const modifyTask = () => {
 
       modalTitleInputEl.value = currentTaskTitle;
       modalTextareaEl.value = currentTaskText.trim();
+      modalDateInputEl.value = formatDate(currentTaskDate);
 
-      // code for preseting date on date input field
-      const currentTaskDateParts = currentTaskDate.split('-');
-      const [day, month, year] = currentTaskDateParts;
-      const currentDateObj = new Date(year, month - 1, day);
-      modalDateInputEl.value = currentDateObj.toISOString().substring(0, 10);
-
-      // when submit button is clicked, remove task and replace it by the new one
+      // when form is submited, remove task and replace it by the new one
       if (formValidation) {
-        submitTaskBtnEl.addEventListener('click', () => {
+        taskFormEl.addEventListener('submit', () => {
           clickedTask.remove();
         });
       }
