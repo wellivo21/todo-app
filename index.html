@@ -23,21 +23,21 @@
       <h1 class="app-title">TODO App</h1>
 
       <!-- modal -->
-      <button class="add-btn" data-toggle="modal" data-target="#exampleModal">
+      <button class="add-btn" data-toggle="modal" data-target="#taskModal">
         Add new task <i class="icon plus-sign fa-solid fa-plus"></i>
       </button>
 
       <div
         class="modal fade"
-        id="exampleModal"
+        id="taskModal"
         tabindex="-1"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby="taskModalLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h3 class="modal-title section-title" id="exampleModalLabel">
+              <h3 class="modal-title section-title" id="taskModalLabel">
                 Task details
               </h3>
               <button
@@ -65,11 +65,11 @@
                 <div class="form-group">
                   <label for="task-date" class="modal-label">Due to</label>
                   <!-- Datepicker as text field -->
-                  <div class="input-group date" data-date-format="dd/mm/yyyy">
+                  <div class="input-group date" data-date-format="dd-mm-yyyy">
                     <input
                       type="date"
                       class="form-control modal-date-input"
-                      placeholder="dd/mm/yyyy"
+                      placeholder="dd-mm-yyyy"
                     />
                     <div class="error-msg date-error-msg"></div>
                   </div>
@@ -98,7 +98,6 @@
                   <button
                     class="btn btn-primary modal-btn submit-task-btn"
                     type="submit"
-                    data-dismiss="modal"
                   >
                     Submit task
                   </button>
@@ -115,11 +114,15 @@
         <!-- task template -->
         <article class="task">
           <h3 class="task-title">task-title</h3>
-          <p class="task-date">30/09/2022</p>
+          <p class="task-date">30-09-2022</p>
           <p class="task-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
-          <i class="icon modify-task-btn fa-solid fa-pen-to-square"></i>
+          <i
+            class="icon modify-task-btn fa-solid fa-pen-to-square"
+            data-toggle="modal"
+            data-target="#taskModal"
+          ></i>
           <i class="icon delete-task-btn fa-solid fa-trash-can"></i>
         </article>
       </section>
