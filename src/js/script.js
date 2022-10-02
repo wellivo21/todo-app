@@ -4,15 +4,11 @@ import { clearInputs, formatDate } from './helpers.js';
 const modalTitleInputEl = document.querySelector('.modal-title-input');
 const modalDateInputEl = document.querySelector('.modal-date-input');
 const modalTextareaEl = document.querySelector('.modal-textarea');
-const submitTaskBtnEl = document.querySelector('.submit-task-btn');
-const modifyTaskBtnEl = document.querySelector('.modify-task-btn');
-const deleteTaskBtnEl = document.querySelector('.delete-task-btn');
 const taskFormEl = document.querySelector('.task-form');
 const titleErrorMsgEl = document.querySelector('.title-error-msg');
 const dateErrorMsgEl = document.querySelector('.date-error-msg');
 const textErrorMsgEl = document.querySelector('.text-error-msg');
 const tasksSectionEl = document.querySelector('.tasks-section');
-const modalEl = document.querySelector('#taskModal');
 
 // event listeners
 taskFormEl.addEventListener('submit', (event) => {
